@@ -1,0 +1,47 @@
+/* Para la version web: agregale efectos a las "cards"
+
+when user hovers, image should grow, the card should get a border or shadow effect and the cursor should change to pointer
+
+.card-class {
+   img {
+        transition: all 0.5s ease-in-out;
+   }
+
+   &:hover {
+      cursor: pointer;
+      -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+      box-shadow: 5px 5px 15px 5px #000000;
+      img {
+           transform: scale(1.05);
+      }
+   }
+}
+
+the key "transition" indicates how an animation will be performed
+transition: all 0.5s ease-in-out
+
+all => in which transformation or animation would be executed (in this case all)
+0.5s => howlong it will last
+ease-in-out => effect to be used
+
+when we set in the hover of the card, that the image should "grow" we are going to scale it a 5% up (scale(1.05))
+
+this animation will take 0.5 to finish,and will grow when enter, shrink when go out
+
+this example of css is created under the assumption you are using sass/scss, if you have to organize things differently then
+
+.card-class img {
+   transition: all 0.5s ease-in-out;
+}
+
+.card-class:hover {
+   cursor: pointer;
+   -webkit-box-shadow: 5px 5px 15px 5px #000000; 
+   box-shadow: 5px 5px 15px 5px #000000;
+}
+
+.card-class:hover img {
+   transform: scale(1.05);
+}
+
+(if you see the sass/scss wraps things inside, instead of having to separate all the components, it is more easy to read and scale) */
