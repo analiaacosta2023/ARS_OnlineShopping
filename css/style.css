@@ -59,6 +59,11 @@ button.normal {
     transition: 0.2s;
 }
 
+button.normal:hover {
+    background-color: rgb(158, 232, 227);
+    color: rgb(0, 0, 0);
+}
+
 button.white {
     background-color: transparent;
     color: white;
@@ -71,6 +76,12 @@ button.white {
     font-weight: 600;
     font-size: 13px;
     transition: 0.2s;
+}
+
+button.white:hover {
+    background-color: rgb(158, 232, 227);
+    color: black;
+    border: 1.5px solid #088178;
 }
 
 body {
@@ -325,6 +336,11 @@ body {
     right: 10px;
 }
 
+#product1 .pro .cart:hover {
+    background-color: rgb(158, 232, 227);
+    color: rgb(0, 0, 0);
+}
+
 #banner {
     display: flex;
     flex-direction: column;
@@ -359,11 +375,6 @@ body {
     border-radius: 10px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.06);
     padding: 15px;
-}
-
-#banner button:hover {
-    background-color: rgb(158, 232, 227);
-    color: rgb(0, 0, 0);
 }
 
 #sm-banner {
@@ -410,11 +421,7 @@ body {
     padding-bottom: 15px;
 }
 
-#sm-banner .banner-box:hover button {
-    background-color:  rgb(158, 232, 227);
-    color: black;
-    border: 1.5px solid #088178;
-}
+
 
 #banner3 {
     display: flex;
@@ -498,7 +505,7 @@ body {
     border-bottom-right-radius: 0;
 }
 
-#newsletter button{
+#newsletter button {
     border-top-left-radius: 0;
     border-bottom-left-radius: 0;
 }
@@ -562,7 +569,7 @@ footer .install .row img {
 
 footer .install img {
     margin: 10px 0 15px 0;
-} 
+}
 
 footer .cards img {
     height: 30px;
@@ -589,7 +596,7 @@ footer .copyright {
 }
 
 #page-header h2,
-#page-header p{
+#page-header p {
     color: white;
 }
 
@@ -774,7 +781,7 @@ footer .copyright {
     height: 100%;
 }
 
-#form-details{
+#form-details {
     display: flex;
     justify-content: space-between;
     margin: 30px;
@@ -826,8 +833,130 @@ footer .copyright {
     color: black;
 }
 
+/* Cart Page */
 
+#cart {
+    /* Agrega la barrita para no cortar la table en pantallas pequenas */
+    overflow-x: auto;
+}
 
+#cart table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: fixed;
+    white-space: nowrap;
+}
+
+#cart table img {
+    width: 70px;
+}
+
+#cart table td:nth-child(1) {
+    width: 100px;
+    text-align: center;
+}
+
+#cart table td:nth-child(2) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(3) {
+    width: 250px;
+    text-align: center;
+}
+
+#cart table td:nth-child(4),
+#cart table td:nth-child(5),
+#cart table td:nth-child(6) {
+    width: 150px;
+    text-align: center;
+}
+
+#cart table td:nth-child(5) input {
+    width: 70px;
+    padding: 10px 5px 10px 15px;
+}
+
+#cart table thead {
+    border: 1px solid #caa3cc;
+    border-left: none;
+    border-right: none;
+}
+
+#cart table thead td {
+    font-weight: 700;
+    text-transform: uppercase;
+    font-size: 13px;
+    padding: 18px 0;
+}
+
+#cart table tbody tr td {
+    padding-top: 15px;
+}
+
+#cart table tbody td {
+    font-size: 13px;
+    color: gray;
+}
+
+#cart-add {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+#coupon {
+    width: 48%;
+    margin-bottom: 30px;
+}
+
+#coupon h3,
+#subtotal h3 {
+    padding-bottom: 15px;
+}
+
+#coupon input {
+    padding: 10px 20px;
+    outline: none;
+    width: 60%;
+    margin-right: 10px;
+    border: 1px solid #caa3cc;
+}
+
+#coupon button,
+#subtotal button {
+    padding: 12px 20px;
+}
+
+#coupon .coupon-box {
+    border: 1px solid #caa3cc;
+    padding: 30px;
+}
+
+#shipping {
+    margin-top: 20px;
+}
+
+#subtotal {
+    width: 48%;
+    margin-bottom: 30px;
+    border: 1px solid #caa3cc;
+    padding: 30px;
+}
+
+#subtotal table {
+    border-collapse: collapse;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+#subtotal table td {
+    width: 50%;
+    border: 1px solid #caa3cc;
+    padding: 10px;
+    font-size: 13px;
+}
 
 /* Start media query / Responsive */
 
@@ -921,7 +1050,7 @@ footer .copyright {
     #banner3 {
         padding: 0 40px;
     }
-    
+
     #banner3 .banner-box {
         width: 28%;
     }
@@ -946,9 +1075,11 @@ footer .copyright {
     #header {
         padding: 10px 30px;
     }
+
     h1 {
         font-size: 38px;
     }
+
     h2 {
         font-size: 32px;
     }
@@ -1015,7 +1146,7 @@ footer .copyright {
         margin-right: 0px;
     }
 
-    #prodetails .single-pro-details{
+    #prodetails .single-pro-details {
         width: 100%;
     }
 
@@ -1064,5 +1195,68 @@ footer .copyright {
         margin-bottom: 30px;
     }
 
+    /* Cart page */
 
+    #cart-add {
+        flex-direction: column;
+    }
+
+    #coupon {
+        width: 100%;
+    }
+
+    #subtotal {
+        width: 100%;
+        padding: 20px;
+    }
+
+    #cart table img {
+        width: 50px;
+    }
+
+    #cart table tbody tr td {
+        padding: 15px;
+    }
+
+    #cart table {
+        display: block;
+        position: relative;
+    }
+
+    #cart table tr {
+        width: 100%;
+        display: block;
+        border: 1px solid #caa3cc;
+        padding-top: 15px;
+        margin-bottom: 5px;
+    }
+
+    #cart table td:nth-child(1) {
+        position: absolute;
+        top: 0px;
+        right: 0px;
+    }
+
+    #cart table td:nth-child(2) {
+        text-align: left;
+    }
+
+    #cart table td:nth-child(3),
+    #cart table td:nth-child(4),
+    #cart table td:nth-child(5) {
+        text-align: center;
+    }
+
+    #cart table td:nth-child(6) {
+        display: none;
+    }
+
+    #cart table thead {
+        display: none;
+    }
+
+    #cart table tbody tr {
+        position: relative;
+        border: 1px solid #caa3cc;
+    }
 }
